@@ -6,8 +6,50 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .container-fluid {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+    
+    .content-container {
+      position: relative;
+      z-index: 1;
+      overflow-y: auto;
+      height: 100vh;
+    }
+
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+  </style>
 </head>
 <body>
-  <app-root></app-root>
+  <div class="container-fluid">
+    <video autoplay muted loop>
+      <source src="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/874400/2fda5d3781c6d198d70775f53809db245151928d.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="content-container">
+    <app-root></app-root>
+  </div>
 </body>
 </html>
